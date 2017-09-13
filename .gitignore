@@ -1,4 +1,13 @@
+#R & RStudio
+*.Rproj
 .Rproj.user
+*.Rproj.user
 .Rhistory
+*.Rhistory
 .RData
+*.RData
 .Ruserdata
+*.nb.html
+
+# Mac Temp files
+.DS_Store
