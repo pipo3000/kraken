@@ -25,6 +25,10 @@ source("F_extract_trade_features.R")
 ```
 
 ```{r load the datasets}
+
+if(!file.exists("trades_ETHEUR.csv"))
+  unzip("trades_ETHEUR.zip")
+
 trades_ETHEUR <- read.csv("trades_ETHEUR.csv", encoding = "UTF-8")
 ```
 ETHEUR Trades: between 2015-08-07 11:09:50 and 2017-06-28 20:51:20

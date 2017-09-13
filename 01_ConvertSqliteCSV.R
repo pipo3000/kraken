@@ -20,3 +20,6 @@ trades_ETHEUR <- lDataFrames[[which(tables=="ETHEUR_Trades")]]
 trades_XBTEUR <- lDataFrames[[which(tables=="XBTEUR_Trades")]]
 write.csv(trades_ETHEUR, "trades_ETHEUR.csv", fileEncoding = "UTF-8")
 write.csv(trades_XBTEUR, "trades_XBTEUR.csv", fileEncoding = "UTF-8")
+
+#convert CSV to ZIP
+zip("trades_ETHEUR.zip", files = "trades_ETHEUR.csv")

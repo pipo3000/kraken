@@ -11,3 +11,6 @@
 
 # Mac Temp files
 .DS_Store
+
+#ignore csv files
+trades_ETHEUR.csv
