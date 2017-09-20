@@ -55,7 +55,7 @@ lines(dailystats_ETHEUR$close)
 # Prepare classification
 
 ```{r format dependent variable}
-threshold <- 0.125 * sd(diff(dailystats_ETHEUR$close))
+threshold <- 1/10 * sd(diff(dailystats_ETHEUR$close))
 
 dailystats_ETHEUR$nextdayprice <- ""
 for(i in 1:(nrow(dailystats_ETHEUR)-1)){
@@ -82,6 +82,10 @@ dailystats_ETHEUR <- dailystats_ETHEUR[!apply(dailystats_ETHEUR, 1, anyNA), ]
 # divide data in cross-folds
 set.seed(1000)
 xfolds <- createFolds(dailystats_ETHEUR$nextdayprice, k=10)
+
+#use the first fold for test
+test_cases     <- 1:nrow(dailystats_ETHEUR) %in% xfolds[[1]]
+training_cases <- !test_cases
 ```
 
 # Classification algorithms - getting started
